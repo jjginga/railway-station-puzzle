@@ -53,7 +53,7 @@ The goal is to find a solution with the minimum cost as defined above.
 - `AbstractState`: Represents the abstract state of the problem.
 - `State`: Extends `AbstractState` with specific implementations for the railway station problem.
 - `RailwayStation`: Represents the state of the railway station placement, including methods for calculating the heuristic.
-- `AStar`: Implements the A* search algorithm.
+- `BestFirst`: Implements the A* search algorithm.
 - `Search`: Manages the execution of the search algorithm.
 - `Main`: The main entry point for running the project.
 - `DistanceMapViewer`: Visualizes the resulting map with stations and distances.

@@ -4,20 +4,20 @@ import state.State;
 import java.util.*;
 
 /**
- * A* algorithm
+ * Best First algorithm
  */
-public class AStar {
+public class BestFirst {
 
     //Max time and evaluations
     private static final long MAX_TIME = 60000;
     private static final int MAX_EVALUATIONS = 100000;
 
     /**
-     * A* algorithm
+     * Best First algorithm
      * @param state initial state
      * @return result
      */
-    public Result AStar(State state) {
+    public Result BestFirst(State state) {
         //Priority queue the state must be Comparable and override compareTo
         PriorityQueue<State> queue = new PriorityQueue<>();
         //Set must override equals

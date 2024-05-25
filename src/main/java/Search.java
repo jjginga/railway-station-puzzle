@@ -1,4 +1,3 @@
-import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 import result.Result;
@@ -12,7 +11,7 @@ public class Search {
 
     public void search() {
         List<int[][]> maps = generateMaps();
-        AStar aStar = new AStar();
+        BestFirst bestFirst = new BestFirst();
         int i = 1;
 
         Platform.startup(() -> {});
@@ -21,7 +20,7 @@ public class Search {
             RailwayStation instance = new RailwayStation();
             instance.setMap(map);
             instance.setStations(null);
-            Result result = aStar.AStar(instance);
+            Result result = bestFirst.BestFirst(instance);
             System.out.println(String.format("Instance %d", i));
             System.out.println(result);
 
