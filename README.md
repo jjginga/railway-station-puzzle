@@ -26,9 +26,9 @@ The travel cost is determined by the distance to the nearest station, with the f
 
 The overall cost to minimize is defined as:
 
-\[ \text{Cost} = 1000A + 100B \]
+`Cost = 1000A + 100B`
 
-where \(A\) is the number of stations and \(B\) is the average travel cost. The average travel cost must be less than 3 for the solution to be valid.
+where `A` is the number of stations and `B` is the average travel cost. The average travel cost must be less than 3 for the solution to be valid.
 
 ## Implementation
 
@@ -39,7 +39,7 @@ Specifically, the A* algorithm is employed with a heuristic designed to balance 
 
 The heuristic function used is:
 
-\[ \text{Heuristic} = \text{Number of Stations} + \left( \frac{\text{Sum of (Families * MinDistance)}}{\text{Total Families}} \right) \]
+`Heuristic = Sum of (Families * MinDistance) * (1 + (Number of Stations / Total Families))`
 
 Where `MinDistance` is the minimum distance from each zone to any station, capped at a maximum of 6.
 
@@ -82,49 +82,50 @@ The best solution for each instance is saved and displayed graphically.
 ### Example 1:
 
 **Map:**
-
+```
 0 7 0 0 4
 0 0 0 4 0
 1 0 0 0 0
 4 4 1 0 0
 6 0 3 4 4
+```
 
 **Stations:**
-
+```
 1 1
+```
 
 **Calculations:**
 
-In this solution for the given territory, there is only one station located in the specified zone. 
-The zones at a distance of 1 have no travel cost. The zones at a distance of 2 have a unit cost of 1.
-With 14 families, they contribute a total travel cost of 14. 
-The zones at a distance of 3 have a cost of 2, and with 17 families, the total cost is 34. 
-Summing the travel costs gives 48. With 42 families, the average travel cost is 
-\[ B = \frac{48}{42} = 1.142 \]. Therefore, with one station 
-\[ A = 1 \], the solution value according to the formula to minimize is 
-\[ 1000 \cdot 1 + 1.142 \cdot 100 = 1114 \]. The solution is valid because the average travel cost is less than 3.
+In this solution for the given territory, there is only one station located in the specified zone. The zones at a distance of 1 have no travel cost. 
+The zones at a distance of 2 have a unit cost of 1. With 14 families, they contribute a total travel cost of 14. 
+The zones at a distance of 3 have a cost of 2, and with 17 families, the total cost is 34. Summing the travel costs gives 48. 
+With 42 families, the average travel cost is 
+`B = 48 / 42 = 1.142`. Therefore, with one station 
+`A = 1`, the solution value according to the formula to minimize is 
+`1000 * 1 + 1.142 * 100 = 1114`. The solution is valid because the average travel cost is less than 3.
+
 
 ### Example 2:
 
 **Map:**
-
+```
 0 7 0 0 4
 0 0 0 4 0
 1 0 0 0 0
 4 4 1 0 0
 6 0 3 4 4
-
+```
 **Stations:**
-
+```
 1 1
 3 3
-
+```
 **Calculations:**
 
-By adding another station to the solution, there are now 8 families in the zones at a distance of 2, with a travel cost of 8. 
-The zones at a distance of 3 have only 4 families, with a unit cost of 2, resulting in a travel cost of 8. Thus, the total travel cost is 16, divided by 25 gives 
-\[ B = 0.64 \]. With two stations 
-\[ A = 2 \], the solution cost is 2064. This alteration is not favorable as it increases the total solution cost compared to the previous solution.
+By adding another station to the solution, there are now 8 families in the zones at a distance of 2, with a travel cost of 8. The zones at a distance of 3 have only 4 families, with a unit cost of 2, resulting in a travel cost of 8. Thus, the total travel cost is 16, divided by 25 gives 
+`B = 0.64`. With two stations 
+`A = 2`, the solution cost is 2064. This alteration is not favorable as it increases the total solution cost compared to the previous solution.
 
 ## Instances
 
