@@ -33,7 +33,7 @@ where `A` is the number of stations and `B` is the average travel cost. The aver
 ## Implementation
 
 The project uses informed search algorithms to find the optimal placement of railway stations. 
-Specifically, the A* algorithm is employed with a heuristic designed to balance the number of stations and the average travel cost.
+Specifically, the Best First Search algorithm is employed with a heuristic designed to balance the number of stations and the average travel cost.
 
 ### Heuristic Function
 
@@ -45,7 +45,7 @@ Where `MinDistance` is the minimum distance from each zone to any station, cappe
 
 ### Algorithm
 
-The A* algorithm explores the search space by expanding the most promising nodes first, as determined by the heuristic function. 
+The Best First Search algorithm explores the search space by expanding the most promising nodes first, as determined by the heuristic function. 
 The goal is to find a solution with the minimum cost as defined above.
 
 ### Classes and Methods
@@ -53,7 +53,7 @@ The goal is to find a solution with the minimum cost as defined above.
 - `AbstractState`: Represents the abstract state of the problem.
 - `State`: Extends `AbstractState` with specific implementations for the railway station problem.
 - `RailwayStation`: Represents the state of the railway station placement, including methods for calculating the heuristic.
-- `BestFirst`: Implements the A* search algorithm.
+- `BestFirst`: Implements the Best First search algorithm.
 - `Search`: Manages the execution of the search algorithm.
 - `Main`: The main entry point for running the project.
 - `DistanceMapViewer`: Visualizes the resulting map with stations and distances.
